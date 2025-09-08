@@ -1,0 +1,22 @@
+---
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+
+const listTest = [
+  { name: "Hello" },
+  { name: "World" },
+]
+---
+
+<AnchorHeading level={3} id="current-list-test">
+  Current List
+</AnchorHeading>
+
+<ul>
+  {listTest.map((item) => (
+    <li key={item.name}>
+      <p>
+        {item.name}
+      </p>
+    </li>
+  ))}
+</ul>
