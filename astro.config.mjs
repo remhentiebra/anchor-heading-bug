@@ -21,6 +21,9 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 			],
+      components: {
+        'TableOfContents': './src/components/TableOfContents.astro',
+      }
 		}),
 	],
 });

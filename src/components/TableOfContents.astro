@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/TableOfContents.astro';
+
+const { entry, toc } = Astro.locals.starlightRoute;
+const { body } = entry;
+if (body.includes("<DynamicListWithHeading />")) {
+  const targetItem = toc.items.find(item => item.slug === 'further-reading');
+  targetItem.children.push({ depth: 3, slug: 'current-list-test', text: 'Current List', children: [] });
+}
+---
+
+<Default />
